@@ -1,6 +1,4 @@
 ## Contents
-- [Structures](#structures)
-  - [test](#structures_test)
 - [API Constitution](#api_constitution)
   - [Request-response scheme](#api_constitution_scheme)
   - [Errors list](#api_constitution_errors_list)
