@@ -1,12 +1,9 @@
 ## Contents
-<<<<<<< Updated upstream
 - [Structures](#structures)
   - [test](#structures_test)
-=======
 - [API Constitution](#api_constitution)
   - [Request-response scheme](#api_constitution_scheme)
   - [Errors list](#api_constitution_errors_list)
->>>>>>> Stashed changes
 - [Routes](#routes)
   - [Get all articles](#routes_all_articles)
   - [Get an article by Id](#routes_article)
