@@ -25,19 +25,19 @@ func (h *Handler) userIdentity(c *gin.Context) {
 
 	// check Bearer in headers
 	if len(headerParts) != 2 || headerParts[0] != "Bearer" {
-		newErrorResponse(c, http.StatusUnauthorized, 2000, "Invalid auth header")
+		newErrorResponse(c, http.StatusUnauthorized, 2010, "Invalid auth header")
 		return
 	}
 
 	// check token exists
 	if len(headerParts[1]) == 0 {
-		newErrorResponse(c, http.StatusUnauthorized, 2000, "Token is empty")
+		newErrorResponse(c, http.StatusUnauthorized, 2010, "Token is empty")
 		return
 	}
 
 	// Ccheck token
 	if headerParts[1] != os.Getenv("AUTH_TOKEN") {
-		newErrorResponse(c, http.StatusUnauthorized, 2000, "Invalid auth token")
+		newErrorResponse(c, http.StatusUnauthorized, 3000, "Invalid auth token")
 		return
 	}
 

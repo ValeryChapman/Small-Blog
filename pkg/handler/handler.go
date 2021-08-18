@@ -1,6 +1,8 @@
 package handler
 
 import (
+	"net/http"
+
 	"github.com/ValeryChapman/blog-app/pkg/service"
 	"github.com/gin-gonic/gin"
 )
@@ -16,6 +18,11 @@ func NewHandler(services *service.Service) *Handler {
 // routes
 func (h *Handler) InitRoutes() *gin.Engine {
 	router := gin.New()
+
+	// 404 custom error
+	router.NoRoute(func(c *gin.Context) {
+		newErrorResponse(c, http.StatusNotFound, 1000, "Page not found")
+	})
 
 	api := router.Group("/api")
 	{

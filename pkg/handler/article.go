@@ -24,7 +24,7 @@ func (h *Handler) createArticle(c *gin.Context) {
 
 	id, err := h.services.Article.Create(input)
 	if err != nil {
-		newErrorResponse(c, http.StatusInternalServerError, 2000, err.Error())
+		newErrorResponse(c, http.StatusInternalServerError, 2020, err.Error())
 		return
 	}
 
@@ -60,13 +60,13 @@ func (h *Handler) getArticleById(c *gin.Context) {
 
 	id, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
-		newErrorResponse(c, http.StatusInternalServerError, 2000, "invalid id param")
+		newErrorResponse(c, http.StatusInternalServerError, 2010, "Invalid id param")
 		return
 	}
 
 	article, err := h.services.Article.GetById(id)
 	if err != nil {
-		newErrorResponse(c, http.StatusInternalServerError, 2000, err.Error())
+		newErrorResponse(c, http.StatusInternalServerError, 2020, err.Error())
 		return
 	}
 
@@ -81,13 +81,13 @@ func (h *Handler) deleteArticle(c *gin.Context) {
 
 	id, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
-		newErrorResponse(c, http.StatusInternalServerError, 2000, "invalid id param")
+		newErrorResponse(c, http.StatusInternalServerError, 2010, "Invalid id param")
 		return
 	}
 
 	err = h.services.Article.Delete(id)
 	if err != nil {
-		newErrorResponse(c, http.StatusInternalServerError, 2000, err.Error())
+		newErrorResponse(c, http.StatusInternalServerError, 2020, err.Error())
 		return
 	}
 
@@ -101,7 +101,7 @@ func (h *Handler) updateArticle(c *gin.Context) {
 
 	id, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
-		newErrorResponse(c, http.StatusInternalServerError, 2000, "invalid id param")
+		newErrorResponse(c, http.StatusInternalServerError, 2010, "Invalid id param")
 		return
 	}
 
@@ -112,7 +112,7 @@ func (h *Handler) updateArticle(c *gin.Context) {
 	}
 
 	if err := h.services.Article.Update(id, input); err != nil {
-		newErrorResponse(c, http.StatusInternalServerError, 2000, err.Error())
+		newErrorResponse(c, http.StatusInternalServerError, 2020, err.Error())
 		return
 	}
 
