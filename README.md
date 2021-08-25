@@ -1,12 +1,18 @@
+# What is it?
+## How to start?
+```
+make build && make run
+```
+### If the application is launched for the first time, you need to apply migrations to the database
+```
+make migrate
+```
+
+# Documentation
 ## Contents
-<<<<<<< Updated upstream
-- [Structures](#structures)
-  - [test](#structures_test)
-=======
 - [API Constitution](#api_constitution)
   - [Request-response scheme](#api_constitution_scheme)
   - [Errors list](#api_constitution_errors_list)
->>>>>>> Stashed changes
 - [Routes](#routes)
   - [Get all articles](#routes_all_articles)
   - [Get an article by Id](#routes_article)
@@ -14,6 +20,40 @@
   - [Edit an article](#routes_edit_article)
   - [Delete an article](#routes_delete_article)
 
+## API Constitution <div id="api_constitution"></div>
+### Request-response scheme <div id="api_constitution_scheme"></div>
+#### Request
+```json5
+{} // dictionary, array, or other parameters of a request
+```
+#### Response
+#### Success:
+```json5
+{
+    "status": "OK", // status ok
+    "data": {}  // dictionary, array, or other results of a operation
+}
+```
+#### Error:
+```json5
+{
+    "status": "ERR", // status error
+    "error": {
+        "code": 1, // error code
+        "message": "" // description of the error
+    }
+}
+```
+
+### Errors list <div id="api_constitution_errors_list"></div>
+- `1` - Some exception occured 
+- `1000` - Route not found
+- `2000` - Object creation error (invalid request data)
+- `2010` - Validation failed (invalid request data)
+- `2020` - Database error
+- `2030` - Object not found
+- `3000` - Invalid authorization token
+  
 ## API Constitution <div id="api_constitution"></div>
 ### Request-response scheme <div id="api_constitution_scheme"></div>
 #### Request
