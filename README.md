@@ -137,7 +137,7 @@ Method: GET
 }
 ```
 
-### Create an article (🔒) <div id="routes_create_article"></div>
+### Create an article <div id="routes_create_article"></div>
 ```
 Method: POST
 ```
@@ -164,7 +164,7 @@ Authorization: Bearer YOUR_TOKEN
 }
 ```
 
-### Edit an article (🔒) <div id="routes_edit_article"></div>
+### Edit an article <div id="routes_edit_article"></div>
 ```
 Method: PUT
 ```
@@ -188,7 +188,7 @@ Authorization: Bearer YOUR_TOKEN
 }
 ```
 
-### Delete an article (🔒) <div id="routes_delete_article"></div>
+### Delete an article <div id="routes_delete_article"></div>
 ```
 Method: DELETE
 ```
